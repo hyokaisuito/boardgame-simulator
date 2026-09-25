@@ -12,7 +12,17 @@ npm run build    # dist/ に静的ファイルを出力（任意の静的ホス�
 npm test         # ルールエンジンのテスト
 ```
 
-サーバーは不要です。`dist/` をそのまま GitHub Pages などに置けば動きます。
+サーバーは不要です。`dist/` をそのまま静的ホスティングに置けば動きます。
+
+## GitHub Pages で公開
+
+`.github/workflows/deploy-pages.yml` により、`main`（および開発ブランチ）へ push するとテスト・ビルドのうえ自動で GitHub Pages に公開されます。
+
+1. リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にする
+2. push するか、**Actions → Deploy to GitHub Pages → Run workflow** で手動実行
+3. 公開URL：`https://<ユーザー名>.github.io/boardgame-simulator/`
+
+画面遷移は `#/edit/...` のようなハッシュ形式なので、サブパスでもページ再読み込みで壊れません。
 
 ## できること
 
